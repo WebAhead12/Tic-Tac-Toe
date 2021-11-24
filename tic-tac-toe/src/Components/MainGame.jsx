@@ -30,10 +30,12 @@ const won = (board) => {
 };
 
 function MainGame() {
+
   //sets the board to 9 empty boxes
   const [board, setBoard] = useState(Array(9).fill(""));
   //default player starts as x
-  const [theme, setTheme] = useState(["Zahi", "Nur"]);
+  const [theme, setTheme] = useState([{ img: '/X.png', name: 'X' }, {img: '/O.png', name: 'O'}]);
+  
   const [defaultPlayer, setDefaultPlayer] = useState(theme[0]);
   //this changes according to the clicks in the game. It'll either be press any box to start OR whose turn it is
   const [message, setMessage] = useState("Press any box to start");
@@ -55,12 +57,12 @@ function MainGame() {
 
     //updates the board
     const boardCopy = [...board];
-    boardCopy[pos] = defaultPlayer;
+    boardCopy[pos] = defaultPlayer.img;
     setBoard(boardCopy);
 
     //displays who the winner is
     if (won(boardCopy)) {
-      setMessage(`${defaultPlayer} WON`);
+      setMessage(`${defaultPlayer.name} WON`);
       setDefaultPlayer("");
       return;
     }
@@ -73,15 +75,25 @@ function MainGame() {
       // player one will be X, and if it's not player one, they'll play O, else, it reverts back to X
       let nextPlayer = defaultPlayer === theme[0] ? theme[1] : theme[0];
       setDefaultPlayer(nextPlayer);
-      setMessage(` ${nextPlayer}'s Turn`);
+      setMessage(` ${nextPlayer.name}'s Turn`);
     }
   }
 
   return (
     <div>
+
       <Refresh onClick={refreshGame} value={"Refresh"} />
       <Message value={message} />
       <Board onClick={handleInput} value={board} />
+      <button onClick={()=>{
+         setTheme([{ img: '/marioface.jpg', name: 'Mario' }, {img: '/X.png', name: 'Shireen'}]);
+       }}>Mario/Shireen</button>
+             <button onClick={()=>{
+         setTheme([{ img: '/fadi.jpg', name: 'Fadi' }, {img: '/hassona.jpg', name: 'Hassona'}]);
+       }}>Fadi/Hassona</button>
+             <button onClick={()=>{
+         setTheme([{ img: '/X.png', name: 'X' }, {img: '/O.png', name: 'O'}]);
+       }}>X/O</button>
     </div>
   );
 }

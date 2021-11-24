@@ -2,8 +2,8 @@ import React from "react";
 import Box from "./Box";
 
 const style = {
-  width: "90%",
-  height: "500px",
+  width: "60%",
+  height: "62vmin",
   margin: "0 auto",
   display: "grid",
   //this style thing adjusts the sizing between the squares
