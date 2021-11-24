@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+}
+.Themes{
+    width: 40%;
+    height: 75px
+;
+    display: flex;
+    background-color: #0088ff;
+    justify-content: center;
+    margin-left: 30%;
+    border-radius: 5px;
+}
+
+.f{
+    margin-top: 15px;
+    justify-content: left;
+    background-color: white;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    color: black;
+    height: 34px;
+
+}
+.message{
+   text-align: center;
+    background-color: #FBB040;
+    width: 40%;
+    height: 45px;
+    margin-left: 30%;
+    border-radius: 5px;
+}

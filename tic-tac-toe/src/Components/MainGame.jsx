@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Board from "./MainBoard";
 import Refresh from "./Refresh1";
 import Message from "./Message1";
-
+import "./MainGame.css";
 //list of winning outcomes
 const won = (board) => {
   const combos = [
@@ -30,12 +30,14 @@ const won = (board) => {
 };
 
 function MainGame() {
-
   //sets the board to 9 empty boxes
   const [board, setBoard] = useState(Array(9).fill(""));
   //default player starts as x
-  const [theme, setTheme] = useState([{ img: '/X.png', name: 'X' }, {img: '/O.png', name: 'O'}]);
-  
+  const [theme, setTheme] = useState([
+    { img: "/X.png", name: "X" },
+    { img: "/O.png", name: "O" },
+  ]);
+
   const [defaultPlayer, setDefaultPlayer] = useState(theme[0]);
   //this changes according to the clicks in the game. It'll either be press any box to start OR whose turn it is
   const [message, setMessage] = useState("Press any box to start");
@@ -47,7 +49,9 @@ function MainGame() {
     setMessage("Click to start");
     setDefaultPlayer(theme[0]);
   }
-
+  useEffect(() => {
+    refreshGame();
+  }, [theme]);
   //not sure about this one
   //apparently it doesn't allow you to play if the game is over?
   function handleInput(pos) {
@@ -81,19 +85,47 @@ function MainGame() {
 
   return (
     <div>
-
       <Refresh onClick={refreshGame} value={"Refresh"} />
       <Message value={message} />
       <Board onClick={handleInput} value={board} />
-      <button onClick={()=>{
-         setTheme([{ img: '/marioface.jpg', name: 'Mario' }, {img: '/X.png', name: 'Shireen'}]);
-       }}>Mario/Shireen</button>
-             <button onClick={()=>{
-         setTheme([{ img: '/fadi.jpg', name: 'Fadi' }, {img: '/hassona.jpg', name: 'Hassona'}]);
-       }}>Fadi/Hassona</button>
-             <button onClick={()=>{
-         setTheme([{ img: '/X.png', name: 'X' }, {img: '/O.png', name: 'O'}]);
-       }}>X/O</button>
+      <div className="Themes">
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/marioface.jpg", name: "Mario" },
+              { img: "/shireen.jpg", name: "Shireen" },
+            ]);
+            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
+          }}
+        >
+          Mario/Shireen
+        </button>
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/fadi.jpg", name: "Fadi" },
+              { img: "/hassona.jpg", name: "Hassona" },
+            ]);
+            // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
+          }}
+        >
+          Fadi/Hassona
+        </button>
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/X.png", name: "X" },
+              { img: "/O.png", name: "O" },
+            ]);
+            // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
+          }}
+        >
+          X/O
+        </button>
+      </div>
     </div>
   );
 }

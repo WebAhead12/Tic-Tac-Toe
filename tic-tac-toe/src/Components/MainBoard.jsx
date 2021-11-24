@@ -2,13 +2,15 @@ import React from "react";
 import Box from "./Box";
 
 const style = {
-  width: "60%",
-  height: "62vmin",
+  backgroundColor: "#00B0AD",
+  width: "50%",
+  height: "50vmin",
   margin: "0 auto",
   display: "grid",
   //this style thing adjusts the sizing between the squares
   gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
   padding: "4%",
+  borderRadius: "5px",
 };
 //this function positions each square and locates it on the board
 function Board(props) {
