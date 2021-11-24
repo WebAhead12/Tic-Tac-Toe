@@ -3,14 +3,17 @@ import Box from "./Box";
 
 const style = {
   backgroundColor: "#00B0AD",
-  width: "50%",
-  height: "50vmin",
+  width: "70%",
+  height: "auto",
   margin: "0 auto",
   display: "grid",
+
   //this style thing adjusts the sizing between the squares
   gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
+
   padding: "4%",
   borderRadius: "5px",
+  paddingRight: "9%",
 };
 //this function positions each square and locates it on the board
 function Board(props) {

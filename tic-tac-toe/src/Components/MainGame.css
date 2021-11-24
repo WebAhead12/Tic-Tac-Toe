@@ -1,34 +1,59 @@
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
-.Themes{
-    width: 40%;
-    height: 75px
-;
-    display: flex;
-    background-color: #0088ff;
-    justify-content: center;
-    margin-left: 30%;
-    border-radius: 5px;
+.Themes {
+  background-color: #000000;
+  margin-top: 10px;
+  min-width: 70%;
+  max-width: 90%;
+  /* width: 50vw; */
+  height: 75px;
+  display: flex;
+  /* flex-direction: column; */
+  background-color: #f8f8f8;
+  opacity: 90%;
+  /* justify-content: center; */
+  margin-left: 3%;
+  border-radius: 5px;
+  padding-right: 2%;
+  padding-left: 2%;
+  justify-content: space-between;
+  border: 1px solid #00b0ad;
 }
 
-.f{
-    margin-top: 15px;
-    justify-content: left;
-    background-color: white;
-    font-size: 16px;
-    line-height: 2;
-    font-weight: bold;
-    letter-spacing: 0.25px;
-    color: black;
-    height: 34px;
+.f {
+  margin-top: 15px;
+  justify-content: left;
+  background-color: white;
 
+  line-height: 2px;
+  font-weight: bold;
+  letter-spacing: 0.25px;
+  color: black;
+  height: 34px;
+  border-radius: 10px;
+  margin-left: -2px;
+  /* border: 2px solid #00b0ad; */
+
+  /* text-align: center; */
 }
-.message{
-   text-align: center;
-    background-color: #FBB040;
-    width: 40%;
-    height: 45px;
-    margin-left: 30%;
-    border-radius: 5px;
+.message {
+  text-align: center;
+  background-color: #fbb040;
+  width: 40%;
+  height: 45px;
+  margin-left: 30%;
+  border-radius: 5px;
+}
+
+.ThemeName {
+  width: 40%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  border: 5px solid #00b0ad;
+  margin: 0 auto;
+  margin-top: 2%;
 }

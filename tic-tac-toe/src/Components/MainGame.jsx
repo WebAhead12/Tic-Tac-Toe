@@ -46,7 +46,7 @@ function MainGame() {
   //the function that resets the boxes to empty boxes and restarts the initial message, also reverts the default player to X
   function refreshGame() {
     setBoard(Array(9).fill(""));
-    setMessage("Click to start");
+    setMessage("Press any box to start");
     setDefaultPlayer(theme[0]);
   }
   useEffect(() => {
@@ -88,25 +88,29 @@ function MainGame() {
       <Refresh onClick={refreshGame} value={"Refresh"} />
       <Message value={message} />
       <Board onClick={handleInput} value={board} />
+      <h3 className="ThemeName">Themes</h3>
       <div className="Themes">
+        <div className="divider"></div>
         <button
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/marioface.jpg", name: "Mario" },
-              { img: "/shireen.jpg", name: "Shireen" },
+              { img: "/marioface.png", name: "Mario" },
+
+              { img: "/shireen.png", name: "Shireen" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
         >
           Mario/Shireen
         </button>
+
         <button
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/fadi.jpg", name: "Fadi" },
-              { img: "/hassona.jpg", name: "Hassona" },
+              { img: "/fadi.png", name: "Fadi" },
+              { img: "/hassona.png", name: "Hassona" },
             ]);
             // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
           }}
@@ -120,11 +124,13 @@ function MainGame() {
               { img: "/X.png", name: "X" },
               { img: "/O.png", name: "O" },
             ]);
+
             // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
           }}
         >
           X/O
         </button>
+        <div className="divider"></div>
       </div>
     </div>
   );
