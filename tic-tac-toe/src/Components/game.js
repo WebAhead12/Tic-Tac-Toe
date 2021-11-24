@@ -41,15 +41,17 @@ function Game() {
   //sets the board to 9 empty boxes
   const [board, setBoard] = useState(Array(9).fill(""));
   //default player starts as x
-  const [defaultPlayer, setDefaultPlayer] = useState("X");
+  const [theme, setTheme] = useState(['Zahi', 'Nur'])
+  const [defaultPlayer, setDefaultPlayer] = useState(theme[0]);
   //this changes according to the clicks in the game. It'll either be press any box to start OR whose turn it is
   const [message, setMessage] = useState("Press any box to start");
-
+  // /mario /shireen
+  // /x /o
   //the function that resets the boxes to empty boxes and restarts the initial message, also reverts the default player to X
   function refreshGame() {
     setBoard(Array(9).fill(""));
     setMessage("Click to start");
-    setDefaultPlayer("X");
+    setDefaultPlayer(theme[0]);
   }
 
   //not sure about this one
@@ -77,7 +79,7 @@ function Game() {
       setDefaultPlayer("");
     } else {
       // player one will be X, and if it's not player one, they'll play O, else, it reverts back to X
-      let nextPlayer = (defaultPlayer === "X") ? "O" : "X"
+      let nextPlayer = (defaultPlayer === theme[0]) ? theme[1] : theme[0]
       setDefaultPlayer(nextPlayer);
       setMessage(` ${nextPlayer}'s Turn`)
     }
