@@ -68,7 +68,7 @@ function Game() {
 
     //displays who the winner is
     if (won(boardCopy)) {
-      setMessage(`${defaultPlayer} WON`)
+      setMessage(`${defaultPlayer} WON!`)
       setDefaultPlayer("")
       return;
     }
