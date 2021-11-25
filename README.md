@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-A game that we all played in a new themes 
+A game that we all know and love
 
 ## Folder Structure
 - tic-tac-toe:
@@ -28,9 +28,9 @@ A game that we all played in a new themes
     - package.json †
 
 ## Features
-- tic tac toe game
+- Tic Tac Toe game
 - X/O with different icons that you can change
-- refresh button to rest whenever you want
+- refresh button to reset whenever you want
 
 ## WireFrames
 ### HomePage:
