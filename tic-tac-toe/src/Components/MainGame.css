@@ -1,13 +1,28 @@
 body {
   background-color: black;
+  padding-bottom: 4%;
 }
+
+.GameTitle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 50px;
+  color: #fbb040;
+}
+
+.GameTitle p {
+  text-shadow: 3px 3px #00b0ad;
+}
+
 .Themes {
   background-color: #000000;
   margin-top: 10px;
   min-width: 70%;
   max-width: 90%;
   /* width: 50vw; */
-  height: 75px;
+  height: 80px;
   display: flex;
   /* flex-direction: column; */
   background-color: #f8f8f8;
@@ -23,16 +38,17 @@ body {
 
 .f {
   margin-top: 15px;
-  justify-content: left;
+  margin-bottom: 15px;
   background-color: white;
-
+  font-size: 1em;
   line-height: 2px;
   font-weight: bold;
   letter-spacing: 0.25px;
   color: black;
-  height: 34px;
+  /* height: 34px; */
   border-radius: 10px;
   margin-left: -2px;
+  box-shadow: 5px 10px #fbb040;
   /* border: 2px solid #00b0ad; */
 
   /* text-align: center; */
@@ -47,13 +63,27 @@ body {
 }
 
 .ThemeName {
-  width: 40%;
+  width: 80%;
+  height: auto;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5em;
   border: 5px solid #00b0ad;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 7%;
+}
+
+.ThemeName p:nth-child(1) {
+  margin-top: -3px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.ThemeName p:nth-child(2) {
+  font-weight: 700;
+  font-size: 0.8em;
 }

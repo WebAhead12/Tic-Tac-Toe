@@ -86,9 +86,18 @@ function MainGame() {
   return (
     <div>
       <Refresh onClick={refreshGame} value={"Refresh"} />
+      <div className="GameTitle">
+        <p>Tic-Tac-Toe</p>
+      </div>
+      ;
       <Message value={message} />
       <Board onClick={handleInput} value={board} />
-      <h3 className="ThemeName">Themes</h3>
+      <div className="ThemeName">
+        <p>
+          <u>Themes</u>
+        </p>
+        <p>**Changing the theme will restart the game</p>
+      </div>
       <div className="Themes">
         <div className="divider"></div>
         <button

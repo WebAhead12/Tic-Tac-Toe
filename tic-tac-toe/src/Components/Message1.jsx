@@ -6,9 +6,10 @@ const style = {
   height: "auto",
   marginLeft: "27%",
   padding: "4%",
-  fontSize: "3vh",
+  fontSize: "1.7em",
   display: "flex",
   justifyContent: "center",
+  marginTop: "-30px",
 };
 function Message(props) {
   return <h3 style={style}>{props.value}</h3>;

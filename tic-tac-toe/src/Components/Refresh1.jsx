@@ -9,7 +9,7 @@ const style = {
   backgroundColor: "white",
   marginTop: "3%",
   marginLeft: "3%",
-
+  border: " 4px solid #fbb040",
   fontSize: "25px",
   lineHeight: 2,
   fontWeight: "bold",
