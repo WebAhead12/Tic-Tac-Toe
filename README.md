@@ -32,7 +32,7 @@ A game that we all know and love
 - X/O with different icons that you can change
 - refresh button to reset whenever you want
 
-## WireFrames
+## WireFrame
 ### HomePage:
 ![figma template final](https://user-images.githubusercontent.com/61557712/143403911-39e8eb5b-b14a-4fbf-82f4-03669ba6bc6b.jpg)
 
