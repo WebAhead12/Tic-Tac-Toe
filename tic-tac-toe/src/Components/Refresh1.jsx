@@ -7,14 +7,15 @@ const style = {
   borderRadius: 4,
   elevation: 3,
   backgroundColor: "white",
-  marginTop: "3%",
-  marginLeft: "3%",
+
+  margin: "0, auto",
   border: " 4px solid #fbb040",
-  fontSize: "25px",
+  fontSize: "20px",
   lineHeight: 2,
   fontWeight: "bold",
   letterSpacing: 0.25,
   color: "black",
+  // marginTop: "-px",
 };
 
 function Refresh(props) {

@@ -3,8 +3,8 @@ const style = {
   border: "3px solid white",
   //makes X's and O's bigger
   //change to px to vh
-  width: "24vw",
-  height: "23vw",
+  width: "26vw",
+  height: "21vw",
 };
 //this function builds the buttons that are the squares and reveals their value when clicked on
 function Box(props) {

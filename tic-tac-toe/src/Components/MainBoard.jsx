@@ -3,7 +3,7 @@ import Box from "./Box";
 
 const style = {
   backgroundColor: "#00B0AD",
-  width: "70%",
+  width: "80%",
   height: "auto",
   margin: "0 auto",
   display: "grid",
@@ -13,7 +13,7 @@ const style = {
 
   padding: "4%",
   borderRadius: "5px",
-  paddingRight: "9%",
+  paddingRight: "5%",
 };
 //this function positions each square and locates it on the board
 function Board(props) {
