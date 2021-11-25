@@ -30,7 +30,7 @@ A game that we all know and love
 ## Features
 - Tic Tac Toe game
 - X/O with different icons that you can change
-- refresh button to reset whenever you want
+- Refresh button to reset whenever you want
 
 ## WireFrame
 ### HomePage:
