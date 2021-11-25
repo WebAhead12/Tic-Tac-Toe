@@ -26,3 +26,15 @@ A game that we all played in a new themes
     - README.md
     - package-lock.json
     - package.json †
+
+## Features
+- tic tac toe game
+- X/O with different icons that you can change
+- refresh button to rest whenever you want
+
+## WireFrames
+### HomePage:
+![figma template](https://user-images.githubusercontent.com/61557712/143402979-ef72ffc0-9ec0-4628-8213-e4c648885061.png)
+
+## Work Distribution
+React + Css ---> Nur + Zahi
