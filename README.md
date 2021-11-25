@@ -8,12 +8,12 @@ A game that we all played in a new themes
         - Photos
     - src:
         - Components
-             Box.jsx
-             MainBoard.jsx
-             MainGame.css
-             MainGame.jsx
-             Message1.jsx
-             Refresh1.jsx
+            - Box.jsx
+            - MainBoard.jsx
+            - MainGame.css
+            - MainGame.jsx
+            - Message1.jsx
+            - Refresh1.jsx
          - App.css
          - App.js
          - App.test.js
