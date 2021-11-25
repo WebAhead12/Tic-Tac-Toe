@@ -1,9 +1,9 @@
 # Tic-Tac-Toe
 A game that we all know and love
 
-**Take advantage of our limited time scrollbar to enjoy the full experience of the game (only up until 1114px, issues with 1114px+ are under maintenance)
+**Take advantage of our limited time scrollbar to enjoy the full experience of the game (only up until 1114px, issues with 1114px+ are under maintenance)**
 
-*More characters coming soon!
+*More characters coming soon!*
 
 ## Folder Structure
 - tic-tac-toe:
