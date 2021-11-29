@@ -12,12 +12,16 @@ A game that we all know and love
         - Photos
     - src:
         - Components
+        -   Game
             - Box.jsx
             - MainBoard.jsx
             - MainGame.css
             - MainGame.jsx
             - Message1.jsx
             - Refresh1.jsx
+            
+        -   Login
+          
          - App.css
          - App.js
          - App.test.js
@@ -37,6 +41,11 @@ A game that we all know and love
 - Refresh button to reset whenever you want
 
 ## WireFrame
+
+### Login:
+![Screenshot 2021-11-29 152357](https://user-images.githubusercontent.com/79867892/143877774-91b03143-04c3-47e6-9ece-60dcc589e907.png)
+
+
 ### HomePage:
 ![figma template final](https://user-images.githubusercontent.com/61557712/143403911-39e8eb5b-b14a-4fbf-82f4-03669ba6bc6b.jpg)
 
