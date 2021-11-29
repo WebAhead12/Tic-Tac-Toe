@@ -1,16 +1,13 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import Game from './Components/MainGame';
+import React, { useEffect } from "react";
+import "./App.css";
+import Game from "./Components/Game/MainGame";
 
 const App = () => {
   useEffect(() => {
-    document.title = "tic-tac-toe"
-  }, [])
-  return <Game />
-}
-
-
-
+    document.title = "tic-tac-toe";
+  }, []);
+  return <Game />;
+};
 
 // function App() {
 //   return (
