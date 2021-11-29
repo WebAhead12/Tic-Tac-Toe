@@ -1,0 +1,15 @@
+.boardPos {
+  background-color: #00b0ad;
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  /* this style thing adjusts the sizing between the squares */
+  /* gridTemplate: repeat(3; 1fr) / repeat(3; 1fr); */
+
+  padding: 4%;
+  border-radius: 5px;
+  padding-right: 8%;
+}

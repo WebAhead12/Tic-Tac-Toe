@@ -1,0 +1,14 @@
+.boxStyle {
+  border: 3px solid white;
+  /* makes X's and O's bigger */
+  width: 23vw;
+  height: 7vh;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -6,21 +6,28 @@ import "./MainGame.css";
 //list of winning outcomes
 const won = (board) => {
   const combos = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
+    [0, 1, 2, 3],
+    [4, 5, 6, 7],
+    [8, 9, 10, 11],
+    [12, 13, 14, 15],
 
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
+    [0, 4, 8, 12],
+    [1, 5, 9, 13],
+    [2, 6, 10, 14],
+    [3, 7, 11, 15],
 
-    [0, 4, 8],
-    [2, 4, 6],
+    [0, 5, 10, 15],
+    [3, 6, 9, 12],
   ];
   //this loop goes through the combos on each click, checking if a certain box is not empty, if it complements the second and third boxes (a winning line)
   for (let i = 0; i < combos.length; i++) {
-    let [a, b, c] = combos[i];
-    if (board[a] !== "" && board[a] === board[b] && board[a] === board[c]) {
+    let [a, b, c, d] = combos[i];
+    if (
+      board[a] !== "" &&
+      board[a] === board[b] &&
+      board[a] === board[c] &&
+      board[a] === board[d]
+    ) {
       return true;
     }
   }
@@ -45,7 +52,7 @@ function MainGame() {
   // /x /o
   //the function that resets the boxes to empty boxes and restarts the initial message, also reverts the default player to X
   function refreshGame() {
-    setBoard(Array(9).fill(""));
+    setBoard(Array(16).fill(""));
     setMessage("Press any box to start");
     setDefaultPlayer(theme[0]);
   }
