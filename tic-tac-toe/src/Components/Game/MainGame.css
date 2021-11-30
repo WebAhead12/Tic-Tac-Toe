@@ -3,7 +3,25 @@ body {
   padding-bottom: 4%;
   /* overflow: hidden; */
 }
+.Logout{
+    align-Items: left;
+    justify-Content: left;
+    float: top;
+    border-Radius: 4px;
+    background-Color: white;
+    margin: 0px auto;
+    border:  4px solid #fbb040;
+    font-Size: 20px;
+    line-Height: 2px;
+    font-Weight: bold;
+    letter-spacing: 0.25px;
+    color: black;
+    padding: 7.5px;
 
+}
+.Logout:link{
+  text-decoration: none;
+}
 .GameTitle {
   color: white;
   display: flex;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { login, getUser } from "../../utils/api";
+import "./login.css"
 function LoginPage() {
   const [loginData, setLoginData] = useState({
     email: "",
@@ -12,8 +13,8 @@ function LoginPage() {
   const [player2, setPlayer2] = useState("");
   const onChange =
     (stateKey) =>
-    ({ target }) =>
-      setLoginData({ ...loginData, [stateKey]: target.value });
+      ({ target }) =>
+        setLoginData({ ...loginData, [stateKey]: target.value });
 
   const onSubmit = (event) => {
     event.prevent.default();
@@ -56,25 +57,41 @@ function LoginPage() {
   //*this has to be put in the game itself
 
   return (
-    <form onSubmit={login}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        className="username"
-        placeholder="e.g. Mohammad123"
-        onChange={onChange("username")}
-        value={loginData.username}
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        className="password"
-        placeholder="Password..."
-        onChange={onChange("password")}
-        value={loginData.password}
-      />
-      <button type="log-in">Log in</button>
-    </form>
+    <div className='body'>
+      <div className="logintitle">
+        <h1 className='title' > log-in</h1>
+      </div>
+      <div className="login">
+        <form onSubmit={login}>
+          <label htmlFor="username">Username</label>
+          <br />
+          <input
+            type="text"
+            className="username"
+            placeholder="e.g. Mohammad123"
+            onChange={onChange("username")}
+            value={loginData.username}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <br />
+          <input
+            type="password"
+            className="password"
+            placeholder="Password..."
+            onChange={onChange("password")}
+            value={loginData.password}
+          />
+          <br />
+          <br />
+          <br />
+          <button className='btnlog' type="log-in">Log in</button>
+        </form>
+      </div>
+      <div className="footer">
+        <p>**if you do not have an account, <a href='/users/register'>click me to make one</a></p>
+      </div>
+    </div>
   );
 }
 export default LoginPage;
