@@ -3,6 +3,7 @@ import Board from "./MainBoard";
 import Refresh from "./Refresh1";
 import Message from "./Message1";
 import "./MainGame.css";
+import LoginPage from "../Login/login";
 //list of winning outcomes
 const won = (board) => {
   const combos = [
@@ -92,6 +93,7 @@ function MainGame() {
 
   return (
     <div>
+      <button onClick={(logout) => 1}>Log out</button>
       <Refresh onClick={refreshGame} value={"Refresh"} />
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
