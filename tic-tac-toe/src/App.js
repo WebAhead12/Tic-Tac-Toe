@@ -12,11 +12,12 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* Routes makes sure that only one path opens at a time */}
+
       <Routes>
         <Route path="/user/login" element={<Login />} />
 
         {/* the "exact" makes the path match only "/" and not also "/user/login" */}
-        <Route exact path="/" element={<Game />} />
+        {Login.isLoggedIn && <Route exact path="/" element={<Game />} />}
       </Routes>
     </BrowserRouter>
   );

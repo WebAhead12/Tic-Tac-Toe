@@ -19,5 +19,15 @@ export function login(loginData) {
 }
 
 export function getUser(token) {
-  return request("https://localhost:4000/");
+  return request("https://localhost:4000/", {
+    method: "GET",
+    headers: { authorization: `Bearer ${token}` },
+  });
+}
+
+export function register(account) {
+  return request("https://localhost:4000/users/register", {
+    body: JSON.stringify(account),
+    headers: { "content-type": "application/json" },
+  });
 }

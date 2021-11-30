@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { login, getUser } from "../../utils/api";
-function LoginPage() {
-  const [loginData, setLoginData] = useState({
+function RegisterPage() {
+  const [account, setAccount] = useState({
     username: "",
     password: "",
     // player2: "",
   });
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isRegistered, setRegistered] = useState(false);
   const [user, setUser] = useState({});
   // const [player2, setPlayer2] = useState("");
   const onChange =
@@ -63,6 +63,7 @@ function LoginPage() {
       <input
         type="text"
         className="username"
+        name="username"
         placeholder="e.g. Mohammad123"
         onChange={onChange("username")}
         value={loginData.username}
@@ -76,6 +77,7 @@ function LoginPage() {
         value={loginData.password}
       />
       <button type="log-in">Log in</button>
+      return ( )
     </form>
   );
 }

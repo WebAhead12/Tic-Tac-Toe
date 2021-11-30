@@ -46,6 +46,8 @@ function MainGame() {
     { img: "/O.png", name: "O" },
   ]);
 
+  const [username, setUsername] = useState("");
+
   const [defaultPlayer, setDefaultPlayer] = useState(theme[0]);
   //this changes according to the clicks in the game. It'll either be press any box to start OR whose turn it is
   const [message, setMessage] = useState("Press any box to start");
