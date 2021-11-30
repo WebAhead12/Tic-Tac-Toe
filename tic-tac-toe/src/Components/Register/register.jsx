@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { login, getUser } from "../../utils/api";
+import { register } from "../../utils/api";
 function RegisterPage() {
   const [account, setAccount] = useState({
     username: "",
@@ -7,25 +7,28 @@ function RegisterPage() {
     // player2: "",
   });
 
-  const [isRegistered, setRegistered] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
   const [user, setUser] = useState({});
   // const [player2, setPlayer2] = useState("");
   const onChange =
     (stateKey) =>
     ({ target }) =>
-      setLoginData({ ...loginData, [stateKey]: target.value });
+      setIsRegistered({ ...account, [stateKey]: target.value });
 
   //
   const onSubmit = (event) => {
     event.preventDefault();
-    login(loginData).then((data) => {
+    register(account).then((data) => {
       window.localStorage.setItem("access_token", data.access_token);
       setUser(data);
-      setIsLoggedIn(true);
+      setIsRegistered(true);
       console.log(data.error);
     });
   };
-  //
+
+
+  //change to register 
+  // register(account).then (result) => if (result.response === "successful") then redirect to login page
   useEffect(() => {
     const token = window.localStorage.getItem("access_token");
     //router can solve this
@@ -33,7 +36,7 @@ function RegisterPage() {
       getUser(token)
         .then((data) => {
           setUser(data);
-          setIsLoggedIn(true);
+          setIsRegistered(true);
         })
         .catch((error) => {
           console.log(error);
@@ -41,32 +44,18 @@ function RegisterPage() {
     }
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("access_token");
-    setUser({});
-    setIsLoggedIn(false);
-  };
-
-  if (isLoggedIn) {
-    return (
-      <div>
-        <button onClick={logout}>Log out</button>
-      </div>
-    );
-  }
-
-  //*this has to be put in the game itself
 
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="username">Username</label>
+
       <input
         type="text"
         className="username"
-        name="username"
+        name = "username"
         placeholder="e.g. Mohammad123"
         onChange={onChange("username")}
-        value={loginData.username}
+        value={account.username}
       />
       <label htmlFor="password">Password</label>
       <input
@@ -74,11 +63,21 @@ function RegisterPage() {
         className="password"
         placeholder="Password..."
         onChange={onChange("password")}
-        value={loginData.password}
+        value={account.password}
       />
-      <button type="log-in">Log in</button>
-      return ( )
+        <label htmlFor="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        className="ConfirmPassword"
+        placeholder="Confirm password..."
+        onChange={onChange("confirmassword")}
+        value={account.confirmPassword}
+      />
+      <button type="register">Register</button>
+      return (
+        
+      )
     </form>
   );
 }
-export default LoginPage;
+export default RegisterPage;
