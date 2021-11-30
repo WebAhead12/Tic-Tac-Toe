@@ -3,7 +3,7 @@ import Board from "./MainBoard";
 import Refresh from "./Refresh1";
 import Message from "./Message1";
 import "./MainGame.css";
-import LoginPage from "../Login/login";
+// import LoginPage from "../Login/login";
 //list of winning outcomes
 const won = (board) => {
   const combos = [
@@ -43,7 +43,7 @@ function MainGame() {
   //default player starts as x
   const [theme, setTheme] = useState([
     { img: "/X.png", name: "X" },
-    { img: "/O.png", name: "O" },
+    { img: "/O.png", name: "Player-2" },
   ]);
 
   const [username, setUsername] = useState("");
@@ -95,8 +95,8 @@ function MainGame() {
 
   return (
     <div>
-      <button onClick={(logout) => 1}>Log out</button>
       <Refresh onClick={refreshGame} value={"Refresh"} />
+      <a href='/user/login' className='Logout' onClick={(logout) => 1}>Logout</a>
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>
@@ -117,7 +117,7 @@ function MainGame() {
             setTheme([
               { img: "/marioface.png", name: "Mario" },
 
-              { img: "/shireen.png", name: "Shireen" },
+              { img: "/shireen.png", name: "Player-2" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
@@ -130,7 +130,7 @@ function MainGame() {
           onClick={(props) => {
             setTheme([
               { img: "/fadi.png", name: "Fadi" },
-              { img: "/hassona.png", name: "Hassona" },
+              { img: "/hassona.png", name: "Player-2" },
             ]);
             // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
           }}
@@ -142,7 +142,7 @@ function MainGame() {
           onClick={(props) => {
             setTheme([
               { img: "/X.png", name: "X" },
-              { img: "/O.png", name: "O" },
+              { img: "/O.png", name: "Player-2" },
             ]);
 
             // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });

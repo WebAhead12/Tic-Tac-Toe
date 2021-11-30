@@ -22,6 +22,7 @@ function LoginPage() {
       window.localStorage.setItem("access_token", data.access_token);
       setUser(data);
       setIsLoggedIn(true);
+
       console.log(data.error);
     });
   };
@@ -55,14 +56,13 @@ function LoginPage() {
     );
   }
 
-  //*this has to be put in the game itself
-
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="username">Username</label>
       <input
         type="text"
         className="username"
+        name="username"
         placeholder="e.g. Mohammad123"
         onChange={onChange("username")}
         value={loginData.username}
@@ -76,6 +76,7 @@ function LoginPage() {
         value={loginData.password}
       />
       <button type="log-in">Log in</button>
+      return ( )
     </form>
   );
 }
