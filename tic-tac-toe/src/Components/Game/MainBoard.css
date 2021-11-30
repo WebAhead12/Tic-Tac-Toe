@@ -1,12 +1,28 @@
 .boardPos {
+  justify-content: center;
   background-color: #00b0ad;
   width: 84%;
+  height: auto;
   margin: 0 auto;
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-  /* this style thing adjusts the sizing between the squares */
-  
-
+  grid-template: repeat(4, 0.1fr) / repeat(4, 0.02fr);
   padding: 4%;
   border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+  .boardPos {
+    width: 60%;
+    height: 400px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .boardPos {
+    width: 40%;
+    height: 550px;
+    padding: 2%;
+  }
 }

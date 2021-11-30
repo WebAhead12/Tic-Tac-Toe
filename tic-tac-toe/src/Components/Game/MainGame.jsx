@@ -46,7 +46,7 @@ function MainGame() {
     { img: "/O.png", name: "Player-2" },
   ]);
 
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
 
   const [defaultPlayer, setDefaultPlayer] = useState(theme[0]);
   //this changes according to the clicks in the game. It'll either be press any box to start OR whose turn it is
@@ -96,7 +96,9 @@ function MainGame() {
   return (
     <div>
       <Refresh onClick={refreshGame} value={"Refresh"} />
-      <a href='/user/login' className='Logout' onClick={(logout) => 1}>Logout</a>
+      <a href="/user/login" className="Logout" onClick={(logout) => 1}>
+        Logout
+      </a>
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>

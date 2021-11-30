@@ -4,19 +4,38 @@
   align-content: center;
   border: 3px solid white;
   /* makes X's and O's bigger */
-  
-  width: 63px; 
-  height: 60px;
-  justify-self: center;
-  align-self: center;
 
-
-}
-
-img {
   width: 63px;
   height: 60px;
   justify-self: center;
   align-self: center;
+}
 
+img {
+  width: 60px;
+  height: 60px;
+  justify-self: center;
+  align-self: center;
+  transform: scale(400px);
+}
+
+@media (min-width: 768px) {
+  .boxStyle {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .boxStyle {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .boxStyle {
+    width: 130px;
+    height: 130px;
+  }
 }

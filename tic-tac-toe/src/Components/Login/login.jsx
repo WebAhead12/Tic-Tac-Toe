@@ -64,8 +64,9 @@ function LoginPage() {
         className="username"
         name="username"
         placeholder="e.g. Mohammad123"
-        onChange={onChange("username")}
+        onChange={onChange("user.name")}
         value={loginData.username}
+        required
       />
       <label htmlFor="password">Password</label>
       <input
@@ -74,6 +75,7 @@ function LoginPage() {
         placeholder="Password..."
         onChange={onChange("password")}
         value={loginData.password}
+        required
       />
       <button type="log-in">Log in</button>
       return ( )

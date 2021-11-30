@@ -18,6 +18,7 @@ function RegisterPage() {
   //
   const onSubmit = (event) => {
     event.preventDefault();
+    // add if name/password/confirmPassword === "" to bring up an alert
     register(account).then((data) => {
       window.localStorage.setItem("access_token", data.access_token);
       setUser(data);
@@ -26,14 +27,13 @@ function RegisterPage() {
     });
   };
 
-
-  //change to register 
-  // register(account).then (result) => if (result.response === "successful") then redirect to login page
+  //change to register
+  // register(account).then (result) => if (result.response === "successful") then redirect to login page <Link to="./Login/login">Register</link>
   useEffect(() => {
     const token = window.localStorage.getItem("access_token");
     //router can solve this
     if (token) {
-      getUser(token)
+      setUser(token)
         .then((data) => {
           setUser(data);
           setIsRegistered(true);
@@ -44,15 +44,13 @@ function RegisterPage() {
     }
   }, []);
 
-
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="username">Username</label>
-
       <input
         type="text"
         className="username"
-        name = "username"
+        name="username"
         placeholder="e.g. Mohammad123"
         onChange={onChange("username")}
         value={account.username}
@@ -65,18 +63,16 @@ function RegisterPage() {
         onChange={onChange("password")}
         value={account.password}
       />
-        <label htmlFor="confirmPassword">Confirm Password</label>
+      <label htmlFor="confirmPassword">Confirm Password</label>
       <input
         type="password"
         className="ConfirmPassword"
         placeholder="Confirm password..."
-        onChange={onChange("confirmassword")}
+        onChange={onChange("confirmPassword")}
         value={account.confirmPassword}
       />
       <button type="register">Register</button>
-      return (
-        
-      )
+      return ( )
     </form>
   );
 }

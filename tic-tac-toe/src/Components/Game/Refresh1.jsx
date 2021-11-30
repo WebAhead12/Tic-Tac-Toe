@@ -7,7 +7,7 @@ const style = {
   borderRadius: 4,
   elevation: 3,
   backgroundColor: "white",
-
+  cursor: "pointer",
   margin: "0, auto",
   border: " 4px solid #fbb040",
   fontSize: "20px",

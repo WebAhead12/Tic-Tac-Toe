@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/user/login" element={<Login />} />
 
         {/* the "exact" makes the path match only "/" and not also "/user/login" */}
-        {Login.isLoggedIn && <Route exact path="/" element={<Game />} />}
+        <Route exact path="/" element={<Game />} />
       </Routes>
     </BrowserRouter>
   );

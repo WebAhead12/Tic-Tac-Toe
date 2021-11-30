@@ -3,23 +3,23 @@ body {
   padding-bottom: 4%;
   /* overflow: hidden; */
 }
-.Logout{
-    align-Items: left;
-    justify-Content: left;
-    float: top;
-    border-Radius: 4px;
-    background-Color: white;
-    margin: 0px auto;
-    border:  4px solid #fbb040;
-    font-Size: 20px;
-    line-Height: 2px;
-    font-Weight: bold;
-    letter-spacing: 0.25px;
-    color: black;
-    padding: 7.5px;
-
+.Logout {
+  align-items: left;
+  justify-content: left;
+  float: top;
+  border-radius: 4px;
+  background-color: white;
+  margin: 0px auto;
+  margin-left: 1%;
+  border: 4px solid #fbb040;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 0.25px;
+  color: black;
+  padding: 8.5px;
 }
-.Logout:link{
+
+.Logout:link {
   text-decoration: none;
 }
 .GameTitle {
@@ -31,6 +31,11 @@ body {
   color: #fbb040;
 }
 
+@media (min-width: 768px) {
+  .GameTitle {
+    margin-top: -3%;
+  }
+}
 .GameTitle p {
   text-shadow: 3px 3px #00b0ad;
 }
@@ -68,6 +73,8 @@ body {
   border-radius: 10px;
   margin-left: -2px;
   box-shadow: 5px 10px #fbb040;
+  cursor: pointer;
+
   /* border: 2px solid #00b0ad; */
 
   /* text-align: center; */
@@ -92,7 +99,7 @@ body {
   font-size: 1.5em;
   border: 5px solid #00b0ad;
   margin: 0 auto;
-  margin-top: 7%;
+  margin-top: 3%;
 }
 
 .ThemeName p:nth-child(1) {
