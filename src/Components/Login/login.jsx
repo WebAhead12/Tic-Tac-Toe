@@ -65,7 +65,9 @@ function LoginPage(props) {
       </div>
       <div className="login">
         <form onSubmit={onSubmit}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username" className="nin">
+            Username
+          </label>
           <br />
           <input
             type="text"
@@ -76,7 +78,9 @@ function LoginPage(props) {
             required
           />
           <br />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="nin1">
+            Password
+          </label>
           <br />
           <input
             type="password"
