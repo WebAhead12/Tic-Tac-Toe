@@ -159,6 +159,48 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
+              { img: "/mohammad.png", name: "Mohammad" },
+
+              { img: "/george.png", name: "George" },
+            ]);
+            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
+          }}
+        >
+          Mohammad/George
+        </button>
+
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/hala.png", name: "Hala" },
+
+              { img: "/nur.png", name: "Nur" },
+            ]);
+            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
+          }}
+        >
+          Hala/Nur
+        </button>
+
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/julio.png", name: "Julio" },
+
+              { img: "/zahi.png", name: "Zahi" },
+            ]);
+            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
+          }}
+        >
+          Julio/Zahi
+        </button>
+
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
               { img: "/fadi.png", name: "Fadi" },
               { img: "/hassona.png", name: "Player-2" },
             ]);
