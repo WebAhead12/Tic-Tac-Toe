@@ -24,12 +24,10 @@
   border-radius: 5px;
   text-align: center;
 }
-/* 465 */
 .login {
   border-radius: 5px;
   text-align: center;
   margin-left: 2px;
-  width: 400px;
   height: 400px;
   background-color: #00b0ad;
   margin-top: 40px;
@@ -59,9 +57,7 @@
   margin-top: 20px;
   border-radius: 5px;
   text-align: center;
-  width: 450px;
   background-color: #fab140;
-  height: 50px;
 }
 .username,
 .password,
