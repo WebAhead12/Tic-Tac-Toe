@@ -65,6 +65,9 @@ function LoginPage() {
 
   return (
     <div className="bigone">
+      <div className="GameTitle">
+        <p>Tic-Tac-Toe</p>
+      </div>
       <div className="logintitle">
         <h1 className="title"> log-in</h1>
       </div>
