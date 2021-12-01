@@ -1,31 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { register } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 import "./register.css";
+
 function RegisterPage() {
+  const history = useNavigate();
   const [account, setAccount] = useState({
+    fullName: "",
     username: "",
     password: "",
-    // player2: "",
+    confirmPassword: "",
   });
 
-  const [isRegistered, setIsRegistered] = useState(false);
-  const [user, setUser] = useState({});
-  // const [player2, setPlayer2] = useState("");
   const onChange =
     (stateKey) =>
-    ({ target }) =>
-      setIsRegistered({ ...account, [stateKey]: target.value });
+    ({ target }) => {
+      setAccount({ ...account, [stateKey]: target.value });
+    };
 
   //
   const onSubmit = (event) => {
     event.preventDefault();
     // add if name/password/confirmPassword === "" to bring up an alert
-    register(account).then((data) => {
-      window.localStorage.setItem("access_token", data.access_token);
-      setUser(data);
-      setIsRegistered(true);
-      console.log(data.error);
-    });
+    if (account.password !== account.confirmPassword) {
+      alert("Passwords don't match");
+      return;
+    } else {
+      register(account) //trick prettier
+        .then((res) => {
+          if (res.response === "Successful") {
+            alert(
+              `Welcome, ${account.fullName}. Your account has been created successfully`
+            );
+            history("/users/login");
+          } else {
+            alert(res.error);
+          }
+        })
+        .catch((error) => console.error(error));
+    }
   };
 
   //change to register
@@ -41,15 +54,15 @@ function RegisterPage() {
       </div>
       <div className="login">
         <form onSubmit={onSubmit}>
-          <label htmlFor="name1">Name</label>
+          <label htmlFor="fullName">Full Name</label>
           <br />
           <input
             type="text"
-            className="name1"
-            name="name1"
+            className="fullName"
+            name="fullName"
             placeholder="e.g. Jon Snow"
-            onChange={onChange("name1")}
-            value={RegisterPage.name1}
+            onChange={onChange("fullName")}
+            value={RegisterPage.fullName}
             required
           />
           <br />
@@ -92,7 +105,7 @@ function RegisterPage() {
           <br />
           <br />
           <button type="register" className="register">
-            <a href="/users/login">Register</a>
+            Register
           </button>
         </form>
       </div>

@@ -27,6 +27,7 @@ export function getUser(token) {
 
 export function register(account) {
   return request("http://localhost:4000/users/register", {
+    method: "POST",
     body: JSON.stringify(account),
     headers: { "content-type": "application/json" },
   });

@@ -59,6 +59,7 @@
   text-align: center;
   background-color: #fab140;
 }
+.fullName,
 .username,
 .password,
 .ConfirmPassword {
