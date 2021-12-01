@@ -49,4 +49,5 @@ A game that we all know and love
 
 
 ## Work Distribution
-React + Css ---> Nur + Zahi
+React + Css ---> Nur + Zahi + Mohammad
+Backend ---> Mohammad
