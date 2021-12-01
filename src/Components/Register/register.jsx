@@ -30,51 +30,56 @@ function RegisterPage() {
 
   //change to register
   // register(account).then (result) => if (result.response === "successful") then redirect to login page <Link to="./Login/login">Register</link>
-  useEffect(() => {
-    const token = window.localStorage.getItem("access_token");
-    //router can solve this
-    if (token) {
-      setUser(token)
-        .then((data) => {
-          setUser(data);
-          setIsRegistered(true);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, []);
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        className="username"
-        name="username"
-        placeholder="e.g. Mohammad123"
-        onChange={onChange("username")}
-        value={account.username}
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        className="password"
-        placeholder="Password..."
-        onChange={onChange("password")}
-        value={account.password}
-      />
-      <label htmlFor="confirmPassword">Confirm Password</label>
-      <input
-        type="password"
-        className="ConfirmPassword"
-        placeholder="Confirm password..."
-        onChange={onChange("confirmPassword")}
-        value={account.confirmPassword}
-      />
-      <button type="register">Register</button>
-      return ( )
-    </form>
+    <div className="bigone">
+      <div className="GameTitle">
+        <p>Tic-Tac-Toe</p>
+      </div>
+      <div className="logintitle">
+        <h1 className="title"> Register</h1>
+      </div>
+      <div className="login">
+        <form onSubmit={onSubmit}>
+          <label htmlFor="username">Username</label>
+          <br />
+          <input
+            type="text"
+            className="username"
+            name="username"
+            placeholder="e.g. Mohammad123"
+            onChange={onChange("username")}
+            value={RegisterPage.username}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <br />
+          <input
+            type="password"
+            className="password"
+            placeholder="Password..."
+            onChange={onChange("password")}
+            value={RegisterPage.password}
+          />
+          <br />
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <br />
+          <input
+            type="password"
+            className="ConfirmPassword"
+            placeholder="Confirm password..."
+            onChange={onChange("confirmPassword")}
+            value={RegisterPage.confirmPassword}
+          />
+          <br />
+          <br />
+          <br />
+          <button type="register" className="register">
+            <a href="/users/login">Register</a>
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 export default RegisterPage;

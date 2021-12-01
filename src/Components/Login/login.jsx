@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { login, getUser } from "../../utils/api";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./login.css";
-function LoginPage() {
+
+function LoginPage(props) {
+  const location = useLocation();
+  const { from } = location;
+  const history = useNavigate();
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
-    // player2: "",
   });
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({});
-  // const [player2, setPlayer2] = useState("");
+  console.log(location);
   const onChange =
     (stateKey) =>
     ({ target }) =>
@@ -18,14 +19,18 @@ function LoginPage() {
 
   //
 
+  console.log(props);
+
   const onSubmit = (event) => {
     event.preventDefault();
+
     login(loginData)
       .then((data) => {
         if (!data.error.length) {
+          //
+          console.log(from);
           window.localStorage.setItem("access_token", data.access_token);
-          setUser(data);
-          setIsLoggedIn(true);
+          history("/");
         } else {
           alert(data.error);
         }
@@ -39,10 +44,7 @@ function LoginPage() {
     //router can solve this
     if (token) {
       getUser(token)
-        .then((data) => {
-          setUser(data);
-          setIsLoggedIn(true);
-        })
+        .then((data) => {})
         .catch((error) => {
           console.log(error);
         });
@@ -51,17 +53,7 @@ function LoginPage() {
 
   const logout = () => {
     localStorage.removeItem("access_token");
-    setUser({});
-    setIsLoggedIn(false);
   };
-
-  if (isLoggedIn) {
-    return (
-      <div>
-        <button onClick={logout}>Log out</button>
-      </div>
-    );
-  }
 
   return (
     <div className="bigone">
@@ -69,10 +61,10 @@ function LoginPage() {
         <p>Tic-Tac-Toe</p>
       </div>
       <div className="logintitle">
-        <h1 className="title"> log-in</h1>
+        <h1 className="title"> Log-in</h1>
       </div>
       <div className="login">
-        <form onSubmit={login}>
+        <form onSubmit={onSubmit}>
           <label htmlFor="username">Username</label>
           <br />
           <input

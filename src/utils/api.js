@@ -11,7 +11,7 @@ function request(url, settings) {
 }
 
 export function login(loginData) {
-  return request("https://localhost:4000/users/login", {
+  return request("http://localhost:4000/users/login", {
     method: "POST",
     body: JSON.stringify(loginData),
     headers: { "content-type": "application/json" },
@@ -19,14 +19,14 @@ export function login(loginData) {
 }
 
 export function getUser(token) {
-  return request("https://localhost:4000/", {
+  return request("http://localhost:4000/users/thisUser", {
     method: "GET",
     headers: { authorization: `Bearer ${token}` },
   });
 }
 
 export function register(account) {
-  return request("https://localhost:4000/users/register", {
+  return request("http://localhost:4000/users/register", {
     body: JSON.stringify(account),
     headers: { "content-type": "application/json" },
   });

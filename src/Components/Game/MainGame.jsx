@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Board from "./MainBoard";
 import Refresh from "./Refresh1";
 import Message from "./Message1";
+import { useNavigate } from "react-router-dom";
 import "./MainGame.css";
 // import LoginPage from "../Login/login";
+
 //list of winning outcomes
 const won = (board) => {
   const combos = [
@@ -38,6 +40,9 @@ const won = (board) => {
 };
 
 function MainGame() {
+  const history = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
   //sets the board to 9 empty boxes
   const [board, setBoard] = useState(Array(9).fill(""));
   //default player starts as x
@@ -93,12 +98,35 @@ function MainGame() {
     }
   }
 
+  const logout = () => {
+    localStorage.removeItem("access_token");
+    setUser({});
+    history("/users/login");
+    setIsLoggedIn(false);
+  };
+
   return (
     <div>
       <Refresh onClick={refreshGame} value={"Refresh"} />
-      <a href="/user/login" className="Logout" onClick={(logout) => 1}>
+      <history
+        // to={{ pathname: "/users/login", state: { isLoggedIn } }}
+        // state={{ isLoggedIn, setIsLoggedIn, user, setUser }}
+        to="/users/login"
+        //
+        state={{ from: "ss" }}
+        className="Logout"
+        onClick={logout}
+      >
         Logout
-      </a>
+      </history>
+      {/* <a
+        href={"/users/login"}
+        {...isLoggedIn}
+        className="Logout"
+        onClick={logout}
+      >
+        Logout{" "}
+      </a> */}
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>
