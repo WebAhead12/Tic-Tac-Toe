@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { register } from "../../utils/api";
+import "./register.css";
 function RegisterPage() {
   const [account, setAccount] = useState({
     username: "",

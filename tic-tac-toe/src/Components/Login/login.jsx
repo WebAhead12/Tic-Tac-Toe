@@ -58,7 +58,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="body">
+    <div className="bigone">
       <div className="logintitle">
         <h1 className="title"> log-in</h1>
       </div>
