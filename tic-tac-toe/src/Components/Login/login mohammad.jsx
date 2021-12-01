@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { login, getUser } from "../../utils/api";
 import "./login.css";
+import Game from "../Game/MainGame";
+
 function LoginPage() {
   const [loginData, setLoginData] = useState({
     username: "",
@@ -17,7 +19,6 @@ function LoginPage() {
       setLoginData({ ...loginData, [stateKey]: target.value });
 
   //
-
   const onSubmit = (event) => {
     event.preventDefault();
     login(loginData)
@@ -33,15 +34,16 @@ function LoginPage() {
       .catch((error) => console.log(error));
   };
   //
-
   useEffect(() => {
     const token = window.localStorage.getItem("access_token");
+    console.log(token);
     //router can solve this
     if (token) {
       getUser(token)
         .then((data) => {
           setUser(data);
           setIsLoggedIn(true);
+          localStorage.setItem("isLogged", true);
         })
         .catch((error) => {
           console.log(error);
@@ -56,11 +58,7 @@ function LoginPage() {
   };
 
   if (isLoggedIn) {
-    return (
-      <div>
-        <button onClick={logout}>Log out</button>
-      </div>
-    );
+    return <Game />;
   }
 
   return (
@@ -69,7 +67,7 @@ function LoginPage() {
         <h1 className="title"> log-in</h1>
       </div>
       <div className="login">
-        <form onSubmit={login}>
+        <form onSubmit={onSubmit}>
           <label htmlFor="username">Username</label>
           <br />
           <input
@@ -78,7 +76,6 @@ function LoginPage() {
             placeholder="e.g. Mohammad123"
             onChange={onChange("username")}
             value={loginData.username}
-            required
           />
           <br />
           <label htmlFor="password">Password</label>
@@ -89,7 +86,6 @@ function LoginPage() {
             placeholder="Password..."
             onChange={onChange("password")}
             value={loginData.password}
-            required
           />
           <br />
           <br />

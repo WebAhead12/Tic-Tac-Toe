@@ -16,7 +16,7 @@ img {
   height: 60px;
   justify-self: center;
   align-self: center;
-  transform: scale(400px);
+  /* transform: scale(400px); */
 }
 
 @media (min-width: 768px) {
