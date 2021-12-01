@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { login, getUser } from "../../utils/api";
+import "./login.css";
 function LoginPage() {
   const [loginData, setLoginData] = useState({
     username: "",
@@ -57,29 +58,46 @@ function LoginPage() {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        className="username"
-        name="username"
-        placeholder="e.g. Mohammad123"
-        onChange={onChange("user.name")}
-        value={loginData.username}
-        required
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        className="password"
-        placeholder="Password..."
-        onChange={onChange("password")}
-        value={loginData.password}
-        required
-      />
-      <button type="log-in">Log in</button>
-      return ( )
-    </form>
+    <div className="bigone">
+      <div className="logintitle">
+        <h1 className="title"> log-in</h1>
+      </div>
+      <div className="login">
+        <form onSubmit={login}>
+          <label htmlFor="username">Username</label>
+          <br />
+          <input
+            type="text"
+            className="username"
+            placeholder="e.g. Mohammad123"
+            onChange={onChange("username")}
+            value={loginData.username}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <br />
+          <input
+            type="password"
+            className="password"
+            placeholder="Password..."
+            onChange={onChange("password")}
+            value={loginData.password}
+          />
+          <br />
+          <br />
+          <br />
+          <button className="btnlog" type="log-in">
+            Log in
+          </button>
+        </form>
+      </div>
+      <div className="footer">
+        <p>
+          **if you do not have an account,{" "}
+          <a href="/users/register">click me to make one</a>
+        </p>
+      </div>
+    </div>
   );
 }
 export default LoginPage;

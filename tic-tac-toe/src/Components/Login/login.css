@@ -1,10 +1,10 @@
-body {
-  color: black;
+.bigone {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .logintitle {
-  height: 50px;
+  height: 75px;
   width: 450px;
   background-color: #fab140;
 }
@@ -14,7 +14,7 @@ body {
 /* 465 */
 .login {
   text-align: center;
-  margin-left: 25px;
+  margin-left: 2px;
   width: 400px;
   height: 400px;
   background-color: #00b0ad;
@@ -42,6 +42,7 @@ body {
   text-align: center;
 }
 .footer {
+  text-align: center;
   width: 450px;
   background-color: #fab140;
   height: 50px;
