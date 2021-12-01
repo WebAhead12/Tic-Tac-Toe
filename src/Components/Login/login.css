@@ -58,9 +58,22 @@
   text-align: center;
   width: 450px;
   background-color: #fab140;
-  height: 50px;
+  height: 60px;
 }
 .username,
 .password {
+  font-size: 20px;
   padding: 10px;
+}
+.nin,
+.nin1 {
+  font-size: 25px;
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .login {
+    width: 300px;
+  }
+  .footer {
+    width: 300px;
+  }
 }

@@ -1,7 +1,7 @@
 .boardPos {
   justify-content: center;
   background-color: #00b0ad;
-  width: 100%;
+  width: 50%;
   height: auto;
   margin: 0 auto;
   display: grid;
@@ -9,20 +9,27 @@
   padding: 4%;
   border-radius: 5px;
 }
-
+@media (max-width: 500px) {
+  .boardPos {
+    width: 93%;
+    padding: 4%;
+    border-radius: 5px;
+  }
+}
 @media (min-width: 1024px) {
   .boardPos {
-    width: 100%;
+    width: 40%;
     height: 400px;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding: 4%;
+    border-radius: 5px;
   }
 }
 
 @media (min-width: 1440px) {
   .boardPos {
-    width: 100%;
+    width: 35%;
     height: 550px;
-    padding: 2%;
+    padding: 4%;
+    border-radius: 5px;
   }
 }
