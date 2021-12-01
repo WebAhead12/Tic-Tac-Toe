@@ -1,7 +1,7 @@
 .boardPos {
   justify-content: center;
   background-color: #00b0ad;
-  width: 84%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   display: grid;
@@ -12,7 +12,7 @@
 
 @media (min-width: 1024px) {
   .boardPos {
-    width: 60%;
+    width: 100%;
     height: 400px;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -21,7 +21,7 @@
 
 @media (min-width: 1440px) {
   .boardPos {
-    width: 40%;
+    width: 100%;
     height: 550px;
     padding: 2%;
   }
