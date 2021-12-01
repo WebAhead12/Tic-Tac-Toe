@@ -51,10 +51,6 @@ function LoginPage(props) {
     }
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("access_token");
-  };
-
   return (
     <div className="bigone">
       <div className="GameTitle">
@@ -63,7 +59,7 @@ function LoginPage(props) {
       <div className="logintitle">
         <h1 className="title"> Log-in</h1>
       </div>
-      <div className="login">
+      <div className="register">
         <form onSubmit={onSubmit}>
           <label htmlFor="username">Username</label>
           <br />

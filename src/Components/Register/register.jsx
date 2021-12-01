@@ -41,25 +41,40 @@ function RegisterPage() {
       </div>
       <div className="login">
         <form onSubmit={onSubmit}>
+          <label htmlFor="name1">Name</label>
+          <br />
+          <input
+            type="text"
+            className="name1"
+            name="name1"
+            placeholder="e.g. Jon Snow"
+            onChange={onChange("name1")}
+            value={RegisterPage.name1}
+            required
+          />
+          <br />
           <label htmlFor="username">Username</label>
           <br />
           <input
             type="text"
             className="username"
             name="username"
-            placeholder="e.g. Mohammad123"
+            placeholder="e.g. iKnowNothing1"
             onChange={onChange("username")}
             value={RegisterPage.username}
+            required
           />
           <br />
           <label htmlFor="password">Password</label>
           <br />
           <input
             type="password"
+            name="password"
             className="password"
             placeholder="Password..."
             onChange={onChange("password")}
             value={RegisterPage.password}
+            required
           />
           <br />
           <label htmlFor="confirmPassword">Confirm Password</label>
@@ -67,9 +82,11 @@ function RegisterPage() {
           <input
             type="password"
             className="ConfirmPassword"
+            name="ConfirmPassword"
             placeholder="Confirm password..."
             onChange={onChange("confirmPassword")}
             value={RegisterPage.confirmPassword}
+            required
           />
           <br />
           <br />
