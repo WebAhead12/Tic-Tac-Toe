@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Board from "./MainBoard";
 import Refresh from "./Refresh1";
 import Message from "./Message1";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./MainGame.css";
+import { getUser } from "../../utils/api";
+
 // import LoginPage from "../Login/login";
 
 //list of winning outcomes
@@ -41,8 +43,24 @@ const won = (board) => {
 
 function MainGame() {
   const history = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("access_token");
+    //router can solve this
+    if (token) {
+      getUser(token)
+        .then((data) => {
+          setUser(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      history("/users/login");
+    }
+  }, []);
+
   //sets the board to 9 empty boxes
   const [board, setBoard] = useState(Array(9).fill(""));
   //default player starts as x
@@ -102,31 +120,19 @@ function MainGame() {
     localStorage.removeItem("access_token");
     setUser({});
     history("/users/login");
-    setIsLoggedIn(false);
   };
 
   return (
     <div>
       <Refresh onClick={refreshGame} value={"Refresh"} />
-      <history
-        // to={{ pathname: "/users/login", state: { isLoggedIn } }}
-        // state={{ isLoggedIn, setIsLoggedIn, user, setUser }}
+      <Link
         to="/users/login"
-        //
         state={{ from: "ss" }}
         className="Logout"
         onClick={logout}
       >
         Logout
-      </history>
-      {/* <a
-        href={"/users/login"}
-        {...isLoggedIn}
-        className="Logout"
-        onClick={logout}
-      >
-        Logout{" "}
-      </a> */}
+      </Link>
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>
@@ -171,7 +177,7 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/X.png", name: "X" },
+              { img: "/X.png", name: `${user.name}` },
               { img: "/O.png", name: "Player-2" },
             ]);
 

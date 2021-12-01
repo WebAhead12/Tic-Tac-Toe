@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { login, getUser } from "../../utils/api";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { login } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 function LoginPage(props) {
-  const location = useLocation();
-  const { from } = location;
   const history = useNavigate();
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
   });
-  console.log(location);
   const onChange =
     (stateKey) =>
     ({ target }) =>
       setLoginData({ ...loginData, [stateKey]: target.value });
-
-  //
-
-  console.log(props);
+  // console.log(props);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -27,29 +21,14 @@ function LoginPage(props) {
     login(loginData)
       .then((data) => {
         if (!data.error.length) {
-          //
-          console.log(from);
           window.localStorage.setItem("access_token", data.access_token);
           history("/");
         } else {
           alert(data.error);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
-  //
-
-  useEffect(() => {
-    const token = window.localStorage.getItem("access_token");
-    //router can solve this
-    if (token) {
-      getUser(token)
-        .then((data) => {})
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, []);
 
   return (
     <div className="bigone">
