@@ -23,7 +23,6 @@
   width: 300px;
   background-color: #fab140;
   font-size: 20px;
-  /* margin-left: 30px; */
 }
 
 .backToLogin {
@@ -73,12 +72,6 @@
   text-align: center;
   margin-top: -10px;
 }
-/* .footer {
-  margin-top: 20px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: #fab140;
-} */
 .fullName,
 .username,
 .password,
@@ -96,4 +89,9 @@
 
 label {
   font-size: 20px;
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .register {
+    margin-left: 28px;
+  }
 }

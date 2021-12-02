@@ -6,7 +6,7 @@
   transform: scale(1.2);
 }
 .GameTitle p {
-  margin-top: 150px;
+  margin-top: 200px;
   color: white;
   justify-content: center;
   font-weight: 900;
@@ -14,7 +14,6 @@
   color: #fbb040;
 }
 .logintitle {
-  /* margin-top: 10px; */
   border-radius: 5px;
   height: 75px;
   width: 450px;
@@ -43,6 +42,7 @@
   padding-top: 25px;
 }
 .btnlog {
+  cursor: pointer;
   align-items: left;
   justify-content: left;
   float: top;
@@ -60,6 +60,7 @@
   text-align: center;
 }
 .footer {
+  padding: 10px;
   margin-top: 20px;
   border-radius: 5px;
   text-align: center;
@@ -80,10 +81,19 @@
 }
 @media (min-width: 320px) and (max-width: 500px) {
   .login {
+    margin-left: 28px;
     width: 300px;
   }
   .footer {
+    margin-left: 24px;
     width: 300px;
+  }
+  .logintitle {
+    margin-left: 24px;
+    width: 290px;
+  }
+  .register {
+    margin-left: 28px;
   }
 }
 
