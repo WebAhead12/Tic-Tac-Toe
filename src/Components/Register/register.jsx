@@ -21,7 +21,7 @@ function RegisterPage() {
   //
   const onSubmit = (event) => {
     event.preventDefault();
-    // add if name/password/confirmPassword === "" to bring up an alert
+    console.log(1234);
     if (account.password !== account.confirmPassword) {
       alert("Passwords don't match");
       return;
@@ -41,9 +41,6 @@ function RegisterPage() {
     }
   };
 
-  //change to register
-  // register(account).then (result) => if (result.response === "successful") then redirect to login page <Link to="./Login/login">Register</link>
-
   return (
     <div className="bigoneRegister">
       <div className="GameTitle">
@@ -56,7 +53,7 @@ function RegisterPage() {
         <form onSubmit={onSubmit}>
           <br />
           <label className="nameTitle" htmlFor="fullName">
-            Full Name
+            Name
           </label>
           <br />
           <input
@@ -111,7 +108,7 @@ function RegisterPage() {
           <br />
           <br />
           <br />
-          <button type="button" className="btnRegister">
+          <button type="submit" className="btnRegister">
             Register
           </button>
           <a href="/users/login">

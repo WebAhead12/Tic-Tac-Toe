@@ -13,7 +13,6 @@ function LoginPage(props) {
     (stateKey) =>
     ({ target }) =>
       setLoginData({ ...loginData, [stateKey]: target.value });
-  // console.log(props);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -77,7 +76,7 @@ function LoginPage(props) {
       </div>
       <div className="footer">
         <p>
-          **if you do not have an account,{" "}
+          **If you do not have an account,{" "}
           <a href="/users/register">click me to make one</a>
         </p>
       </div>

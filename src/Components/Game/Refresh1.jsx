@@ -15,7 +15,6 @@ const style = {
   fontWeight: "bold",
   letterSpacing: 0.25,
   color: "black",
-  // marginTop: "-px",
 };
 
 function Refresh(props) {
