@@ -63,7 +63,7 @@ body {
   height: 170px;
   display: flex;
   flex-wrap: wrap;
-  opacity: 90%;
+  /* opacity: 90%; */
   margin: 0 auto;
   border-radius: 5px;
   justify-content: space-around;
