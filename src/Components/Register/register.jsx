@@ -57,7 +57,7 @@ function RegisterPage() {
         <form onSubmit={onSubmit}>
           <br />
           <label className="nameTitle" htmlFor="fullName">
-            Full Name
+            Name
           </label>
           <br />
           <input
