@@ -130,6 +130,7 @@ function MainGame() {
     history("/users/login");
   };
 
+  //activateTheme assist with toggling a class on themes to appear as selected.
   const activateTheme = (img1, img2, name, themeNumber) => {
     let themes = [];
     let length = 0;
