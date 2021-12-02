@@ -21,6 +21,7 @@ function RegisterPage() {
   //
   const onSubmit = (event) => {
     event.preventDefault();
+    console.log(1234);
     // add if name/password/confirmPassword === "" to bring up an alert
     if (account.password !== account.confirmPassword) {
       alert("Passwords don't match");
@@ -111,7 +112,7 @@ function RegisterPage() {
           <br />
           <br />
           <br />
-          <button type="button" className="btnRegister">
+          <button type="submit" className="btnRegister">
             Register
           </button>
           <a href="/users/login">
