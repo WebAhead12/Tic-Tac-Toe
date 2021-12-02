@@ -45,16 +45,19 @@ function RegisterPage() {
   // register(account).then (result) => if (result.response === "successful") then redirect to login page <Link to="./Login/login">Register</link>
 
   return (
-    <div className="bigone">
+    <div className="bigoneRegister">
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>
-      <div className="logintitle">
+      <div className="registertitle">
         <h1 className="title"> Register</h1>
       </div>
-      <div className="login">
+      <div className="register">
         <form onSubmit={onSubmit}>
-          <label htmlFor="fullName">Full Name</label>
+          <br />
+          <label className="nameTitle" htmlFor="fullName">
+            Full Name
+          </label>
           <br />
           <input
             type="text"
@@ -65,6 +68,7 @@ function RegisterPage() {
             value={RegisterPage.fullName}
             required
           />
+          <br />
           <br />
           <label htmlFor="username">Username</label>
           <br />
@@ -78,8 +82,10 @@ function RegisterPage() {
             required
           />
           <br />
+          <br />
           <label htmlFor="password">Password</label>
           <br />
+
           <input
             type="password"
             name="password"
@@ -89,6 +95,7 @@ function RegisterPage() {
             value={RegisterPage.password}
             required
           />
+          <br />
           <br />
           <label htmlFor="confirmPassword">Confirm Password</label>
           <br />
@@ -104,9 +111,14 @@ function RegisterPage() {
           <br />
           <br />
           <br />
-          <button type="register" className="register">
+          <button type="button" className="btnRegister">
             Register
           </button>
+          <a href="/users/login">
+            <button type="button" className="backToLogin">
+              Back to Login
+            </button>
+          </a>
         </form>
       </div>
     </div>

@@ -1,8 +1,11 @@
-.bigone {
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300&family=Ubuntu:wght@300&display=swap");
+
+.bigoneRegister {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4%;
+  transform: scale(1.2);
 }
 .GameTitle {
   margin-top: 75px;
@@ -13,10 +16,23 @@
   color: #fbb040;
 }
 
-.logintitle {
+.registertitle {
   margin-top: 10px;
   border-radius: 5px;
   height: 50%;
+  width: 300px;
+  background-color: #fab140;
+  font-size: 20px;
+  /* margin-left: 30px; */
+}
+
+.backToLogin {
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 5px;
+  height: 40px;
+  width: 302px;
+  margin-left: 3px;
   background-color: #fab140;
   font-size: 20px;
 }
@@ -24,19 +40,23 @@
   border-radius: 5px;
   text-align: center;
 }
-.login {
+.register {
   border-radius: 5px;
   text-align: center;
   margin-left: 2px;
-  height: 400px;
+  height: 460px;
   background-color: #00b0ad;
   margin-top: 40px;
   display: flex;
+  width: 300px;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding-top: 40px;
 }
-.btnlog {
+
+.btnRegister {
+  cursor: pointer;
   align-items: left;
   justify-content: left;
   float: top;
@@ -44,25 +64,36 @@
   background-color: white;
   margin: 0px auto;
   border: 4px solid #fbb040;
-  font-size: 20px;
-  line-height: 2px;
+  font-size: 25px;
+  line-height: 35px;
   font-weight: bold;
   letter-spacing: 0.25px;
   color: black;
   padding: 7.5px;
-
   text-align: center;
+  margin-top: -10px;
 }
-.footer {
+/* .footer {
   margin-top: 20px;
   border-radius: 5px;
   text-align: center;
   background-color: #fab140;
-}
+} */
 .fullName,
 .username,
 .password,
 .ConfirmPassword {
-  border-radius: 3px;
+  border-radius: 7px;
   padding: 10px;
+}
+
+.fullName,
+.ConfirmPassword {
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+label {
+  font-size: 20px;
 }

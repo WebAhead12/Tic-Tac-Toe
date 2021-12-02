@@ -22,6 +22,20 @@ body {
 .Logout:link {
   text-decoration: none;
 }
+
+.welcomeMessage p {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  /* I know, hilarious */
+  top: -10px;
+  right: 10px;
+  border: 2px solid #00b0ad;
+  width: 90px;
+  height: 50px;
+  padding-left: 3px;
+  text-align: center;
+}
+
 .GameTitle {
   color: white;
   display: flex;
@@ -29,7 +43,7 @@ body {
   font-weight: 900;
   font-size: 50px;
   color: #fbb040;
-  margin-top: -50px;
+  margin-top: -125px;
 }
 
 /* @media (min-width: 768px) {
@@ -46,21 +60,27 @@ body {
   margin-top: 10px;
   min-width: 70%;
   max-width: 90%;
-  /* width: 50vw; */
-  height: 80px;
+  height: 170px;
   display: flex;
   flex-wrap: wrap;
-
-  /* flex-direction: column; */
-  background-color: #f8f8f8;
   opacity: 90%;
-  /* justify-content: center; */
-  margin-left: 3%;
+  margin: 0 auto;
   border-radius: 5px;
-  padding-right: 2%;
-  padding-left: 2%;
-  justify-content: space-between;
-  border: 1px solid #00b0ad;
+  justify-content: space-around;
+  border: 5px solid #00b0ad;
+}
+
+@media (min-width: 697px) {
+  .Themes {
+    height: 90px;
+  }
+  .f {
+    height: 50px;
+  }
+
+  .GameTitle {
+    margin-top: -180px;
+  }
 }
 
 .f {
@@ -72,15 +92,10 @@ body {
   font-weight: bold;
   letter-spacing: 0.25px;
   color: black;
-  /* height: 34px; */
   border-radius: 10px;
   margin-left: -2px;
   box-shadow: 5px 10px #fbb040;
   cursor: pointer;
-
-  /* border: 2px solid #00b0ad; */
-
-  /* text-align: center; */
 }
 .message {
   text-align: center;
@@ -92,7 +107,7 @@ body {
 }
 
 .ThemeName {
-  width: 80%;
+  width: 90%;
   height: auto;
   color: white;
   display: flex;
@@ -115,4 +130,10 @@ body {
 .ThemeName p:nth-child(2) {
   font-weight: 700;
   font-size: 0.8em;
+}
+
+@media (max-width: 441px) {
+  .GameTitle {
+    margin-top: -30%;
+  }
 }

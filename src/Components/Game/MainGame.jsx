@@ -136,8 +136,12 @@ function MainGame() {
       <div className="GameTitle">
         <p>Tic-Tac-Toe</p>
       </div>
-      ;
-      <Message value={message} />
+
+      <div className="welcomeMessage">
+        <p>Welcome, {user.name}!</p>
+      </div>
+
+      <Message className="messsage" value={message} />
       <Board onClick={handleInput} value={board} />
       <div className="ThemeName">
         <p>
@@ -146,14 +150,27 @@ function MainGame() {
         <p>**Changing the theme will restart the game</p>
       </div>
       <div className="Themes">
-        <div className="divider"></div>
+        {/* <div className="divider"></div> */}
+
         <button
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/marioface.png", name: "Mario" },
+              { img: "/X.png", name: `${user.name}` },
+              { img: "/O.png", name: "Player Two" },
+            ]);
+          }}
+        >
+          X/O
+        </button>
 
-              { img: "/shireen.png", name: "Player-2" },
+        <button
+          className="f"
+          onClick={(props) => {
+            setTheme([
+              { img: "/marioface.png", name: `${user.name}` },
+
+              { img: "/shireen.png", name: "Player Two" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
@@ -165,9 +182,9 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/mohammad.png", name: "Mohammad" },
+              { img: "/mohammad.png", name: `${user.name}` },
 
-              { img: "/george.png", name: "George" },
+              { img: "/george.png", name: "Player Two" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
@@ -179,9 +196,9 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/hala.png", name: "Hala" },
+              { img: "/hala.png", name: `${user.name}` },
 
-              { img: "/nur.png", name: "Nur" },
+              { img: "/nur.png", name: "Player Two" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
@@ -193,9 +210,9 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/julio.png", name: "Julio" },
+              { img: "/julio.png", name: `${user.name}` },
 
-              { img: "/zahi.png", name: "Zahi" },
+              { img: "/zahi.png", name: "Player Two" },
             ]);
             // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
           }}
@@ -207,28 +224,16 @@ function MainGame() {
           className="f"
           onClick={(props) => {
             setTheme([
-              { img: "/fadi.png", name: "Fadi" },
-              { img: "/hassona.png", name: "Player-2" },
+              { img: "/fadi.png", name: "Player One" },
+              { img: "/hassona.png", name: "Player Two" },
             ]);
             // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
           }}
         >
           Fadi/Hassona
         </button>
-        <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/X.png", name: `${user.name}` },
-              { img: "/O.png", name: "Player-2" },
-            ]);
 
-            // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
-          }}
-        >
-          X/O
-        </button>
-        <div className="divider"></div>
+        {/* <div className="divider"></div> */}
       </div>
     </div>
   );

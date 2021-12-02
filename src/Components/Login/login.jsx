@@ -40,10 +40,10 @@ function LoginPage(props) {
       </div>
       <div className="register">
         <form onSubmit={onSubmit}>
-          <label htmlFor="username" className="nin">
+          <label htmlFor="username" className="userLabel">
             Username
           </label>
-          <br />
+
           <input
             type="text"
             className="username"
@@ -53,7 +53,9 @@ function LoginPage(props) {
             required
           />
           <br />
-          <label htmlFor="password" className="nin1">
+          <br />
+          <br />
+          <label htmlFor="password" className="passLabel">
             Password
           </label>
           <br />
