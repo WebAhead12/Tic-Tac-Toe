@@ -44,6 +44,14 @@ const won = (board) => {
 function MainGame() {
   const history = useNavigate();
   const [user, setUser] = useState({});
+  const [active, setActive] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]); //this state helps toggling a class on a theme.
 
   useEffect(() => {
     const token = window.localStorage.getItem("access_token");
@@ -122,6 +130,26 @@ function MainGame() {
     history("/users/login");
   };
 
+  const activateTheme = (img1, img2, name, themeNumber) => {
+    let themes = [];
+    let length = 0;
+    setTheme([
+      { img: img1, name: `${name}` },
+      { img: img2, name: "Player Two" },
+    ]);
+    while (length < 6) {
+      //we have 6 themes
+      if (themeNumber === themes.length) {
+        themes.push(true);
+      } else {
+        themes.push(false);
+      }
+      length++;
+    }
+    setActive(themes);
+    return;
+  };
+
   return (
     <div>
       <Refresh onClick={refreshGame} value={"Refresh"} />
@@ -153,82 +181,49 @@ function MainGame() {
         {/* <div className="divider"></div> */}
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/X.png", name: `${user.name}` },
-              { img: "/O.png", name: "Player Two" },
-            ]);
-          }}
+          className={active[0] ? "f selected" : "f"}
+          onClick={() => activateTheme("/X.png", "/O.png", user.name, 0)}
         >
           X/O
         </button>
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/marioface.png", name: `${user.name}` },
-
-              { img: "/shireen.png", name: "Player Two" },
-            ]);
-            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
-          }}
+          className={active[1] ? "f selected" : "f"}
+          onClick={() =>
+            activateTheme("/marioface.png", "/shireen.png", user.name, 1)
+          }
         >
           Mario/Shireen
         </button>
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/mohammad.png", name: `${user.name}` },
-
-              { img: "/george.png", name: "Player Two" },
-            ]);
-            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
-          }}
+          className={active[2] ? "f selected" : "f"}
+          onClick={() =>
+            activateTheme("/mohammad.png", "/george.png", user.name, 2)
+          }
         >
           Mohammad/George
         </button>
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/hala.png", name: `${user.name}` },
-
-              { img: "/nur.png", name: "Player Two" },
-            ]);
-            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
-          }}
+          className={active[3] ? "f selected" : "f"}
+          onClick={() => activateTheme("/hala.png", "/nur.png", user.name, 3)}
         >
           Hala/Nur
         </button>
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/julio.png", name: `${user.name}` },
-
-              { img: "/zahi.png", name: "Player Two" },
-            ]);
-            // setDefaultPlayer({ img: "/marioface.jpg", name: "Mario" });
-          }}
+          className={active[4] ? "f selected" : "f"}
+          onClick={() => activateTheme("/julio.png", "/zahi.png", user.name, 4)}
         >
           Julio/Zahi
         </button>
 
         <button
-          className="f"
-          onClick={(props) => {
-            setTheme([
-              { img: "/fadi.png", name: "Player One" },
-              { img: "/hassona.png", name: "Player Two" },
-            ]);
-            // setDefaultPlayer({ img: "/fadi.jpg", name: "Fadi" });
-          }}
+          className={active[5] ? "f selected" : "f"}
+          onClick={() =>
+            activateTheme("/fadi.png", "/hassona.png", user.name, 5)
+          }
         >
           Fadi/Hassona
         </button>
