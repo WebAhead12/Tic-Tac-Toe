@@ -22,7 +22,6 @@ function RegisterPage() {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(1234);
-    // add if name/password/confirmPassword === "" to bring up an alert
     if (account.password !== account.confirmPassword) {
       alert("Passwords don't match");
       return;
@@ -41,9 +40,6 @@ function RegisterPage() {
         .catch((error) => console.error(error));
     }
   };
-
-  //change to register
-  // register(account).then (result) => if (result.response === "successful") then redirect to login page <Link to="./Login/login">Register</link>
 
   return (
     <div className="bigoneRegister">

@@ -13,7 +13,6 @@ function LoginPage(props) {
     (stateKey) =>
     ({ target }) =>
       setLoginData({ ...loginData, [stateKey]: target.value });
-  // console.log(props);
 
   const onSubmit = (event) => {
     event.preventDefault();
