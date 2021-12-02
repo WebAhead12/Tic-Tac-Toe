@@ -91,3 +91,8 @@
 label {
   font-size: 20px;
 }
+@media (min-width: 320px) and (max-width: 500px) {
+  .register {
+    margin-left: 28px;
+  }
+}
